@@ -260,8 +260,8 @@ limitations under the License.
 
     <!-- Libraries version that MUST be used in all children project -->
 
-    <rudder-version>2.6.0-SNAPSHOT</rudder-version>
-    <spring-run-dep-version>2.6.0-SNAPSHOT</spring-run-dep-version>
+    <rudder-version>2.6.0-scala_2.10-SNAPSHOT</rudder-version>
+    <spring-run-dep-version>2.6.0-scala_2.10-SNAPSHOT</spring-run-dep-version>
     
     <scala-version>2.10.0</scala-version>
     <scala-version-short>2.10</scala-version-short>
