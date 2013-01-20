@@ -338,7 +338,7 @@ limitations under the License.
 
     <dependency>
       <groupId>org.specs2</groupId>
-      <artifactId>specs2_2.10</artifactId>
+      <artifactId>specs2_${scala-version}</artifactId>
       <version>${specs2-version}</version>
       <scope>test</scope>
     </dependency>
