@@ -264,6 +264,7 @@ limitations under the License.
     <spring-run-dep-version>2.6.0-SNAPSHOT</spring-run-dep-version>
     
     <scala-version>2.10.0</scala-version>
+    <scala-version-short>2.10</scala-version-short>
     <scala-lift-version>2.10</scala-lift-version>
     <lift-version>2.5-M4</lift-version>
     <slf4j-version>1.6.6</slf4j-version>
@@ -338,7 +339,7 @@ limitations under the License.
 
     <dependency>
       <groupId>org.specs2</groupId>
-      <artifactId>specs2_${scala-version}</artifactId>
+      <artifactId>specs2_${scala-version-short}</artifactId>
       <version>${specs2-version}</version>
       <scope>test</scope>
     </dependency>
