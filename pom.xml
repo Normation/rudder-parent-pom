@@ -151,7 +151,7 @@ limitations under the License.
         </executions>
         <configuration>
           <args>
-            <arg>-target:jvm-1.5</arg>
+            <arg>-target:jvm-1.6</arg>
             <arg>-dependencyfile</arg>
             <arg>${basedir}/.scala_dependencies</arg>
           </args>
