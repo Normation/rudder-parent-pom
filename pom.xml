@@ -388,6 +388,12 @@ limitations under the License.
       <version>${logback-version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>ca.mrvisser</groupId>
+      <artifactId>sealerate_${scala-binary-version}</artifactId>
+      <version>0.0.4</version>
+    </dependency>
+
     <!--
         If you need to use Spring, you will HAVE TO include that first dependency
         or com.normation.spring-run-dependencies pom
