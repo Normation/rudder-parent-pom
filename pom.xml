@@ -137,17 +137,16 @@ limitations under the License.
         <version>${scala-maven-plugin-version}</version>
         <executions>
           <execution>
-            <id>scala-compile-first</id>
-            <phase>process-resources</phase>
+            <id>scala-add-source</id>
+            <phase>generate-sources</phase>
             <goals>
               <goal>add-source</goal>
-              <goal>compile</goal>
             </goals>
           </execution>
           <execution>
-            <id>scala-test-compile</id>
-            <phase>process-test-resources</phase>
+            <id>scala-compile</id>
             <goals>
+              <goal>compile</goal>
               <goal>testCompile</goal>
             </goals>
           </execution>
@@ -239,7 +238,7 @@ limitations under the License.
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.0.2</version>
-        <configuration>      
+        <configuration>
           <archive>
             <addMavenDescriptor>false</addMavenDescriptor>
             <manifestEntries>
@@ -248,14 +247,14 @@ limitations under the License.
               <Build-Time>${maven.build.timestamp}</Build-Time>
               <version>${version}</version>
             </manifestEntries>
-          </archive>      
+          </archive>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.0</version>
-        <configuration>      
+        <configuration>
           <archive>
             <addMavenDescriptor>false</addMavenDescriptor>
             <manifestEntries>
@@ -265,7 +264,7 @@ limitations under the License.
               <Build-Time>${maven.build.timestamp}</Build-Time>
               <Version>${version}</Version>
             </manifestEntries>
-          </archive>      
+          </archive>
         </configuration>
       </plugin>
       <plugin>
@@ -349,10 +348,10 @@ limitations under the License.
     <asm-version>5.2</asm-version>
     <bcpkix-jdk15on-version>1.58</bcpkix-jdk15on-version>
     <monix-version>2.3.3</monix-version>
-    <!-- 
-      These one must be updated to work together 
-      We declare scalaz in "test" here, because it adds ~12Mo of dep. 
-      and for now, it's not used at all in inventory-ldap app. 
+    <!--
+      These one must be updated to work together
+      We declare scalaz in "test" here, because it adds ~12Mo of dep.
+      and for now, it's not used at all in inventory-ldap app.
     -->
     <specs2-version>3.8.6</specs2-version>
     <scalaz-version>7.2.8</scalaz-version>
@@ -360,11 +359,11 @@ limitations under the License.
     <doobie-version>0.4.0</doobie-version>
     <http4s-version>0.15.3a</http4s-version>
 
-    <!-- 
+    <!--
       Hack to make scalac jvm parameters like RAM configurable.
       With that, one can override Xmx or add jvm parameters either
       in command line invocation: mvn compile -DjvmArg-Xmx="4G"
-      or in ~/.m2/settings.xml with profiles. 
+      or in ~/.m2/settings.xml with profiles.
     -->
 
     <jvmArg-Xmx>1G</jvmArg-Xmx>
@@ -384,9 +383,9 @@ limitations under the License.
 
   <!-- ==================================== PROJECT DEPENDENCIES  ==================================== -->
 
-  <!-- 
-    This allows to use homogeneous version of scalaz everywhere. 
-    Yep, we need to explicitly specify them all. 
+  <!--
+    This allows to use homogeneous version of scalaz everywhere.
+    Yep, we need to explicitly specify them all.
   -->
   <dependencyManagement>
     <dependencies>
